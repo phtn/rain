@@ -17,10 +17,13 @@ import Burst from './components/burst'
 
 class App extends Component {
   state = {
-    points: 0
+    points: 0,
+    offsetTop: 0
   }
   componentDidMount(){
+    this.setState({offsetTop: document.getElementById('logo').offsetTop})
     setInterval(i=> this.setState({points: this.state.points + .01}),100)
+
   }
   render() {
     const styl = {
@@ -30,7 +33,7 @@ class App extends Component {
     }
     return (
       <div style={styles.container}>
-        <Burst />
+        <Burst offset={this.state.offsetTop}/>
         <Flexbox flexDirection={'column'} flexGrow={1} minHeight={'100vh'}>
 
            <Motion defaultStyle={{a: -10, b: -20, c: -30}} style={{a: spring(1), b: spring(1), c: spring(1)}}>
@@ -50,7 +53,7 @@ class App extends Component {
                   justifyContent: 'center',
                   alignItems: 'center',
                   backgroundColor: 'transparent'}}>
-                  <img src={Icosahedron} height={20} width={20} className='App-logo'/>
+                  <img src={Icosahedron} height={20} width={20} className='App-logo' id={'logo'}/>
                 </Flexbox>
 
                 <Flexbox flexDirection={'row'} flexGrow={1} style={{
@@ -84,11 +87,12 @@ class App extends Component {
                    justifyContent: 'center',
                    alignItems: 'center',
                    backgroundColor: '#111111'}}>
-                   <span style={{fontSize: 10, fontFamily: 'Merriweather', color: '#eee', letterSpacing: 1, opacity: i.e}}>welcome</span>
+                   <span style={{fontSize: 10, fontFamily: 'Inconsolata', color: '#eee', letterSpacing: 1, opacity: i.e}}>welcome</span>
                  </Flexbox>
 
                  <Flexbox flexDirection={'row'} flexGrow={1} style={{
                    opacity: i.c,
+                   borderRadius: '0px 0px 5px 0px',
                    justifyContent: 'center',
                    alignItems: 'center',
                    backgroundColor: '#111111'}}>
@@ -112,7 +116,7 @@ class App extends Component {
             margin: 10,
 
           }}>
-          <Content />
+          <Content offset={this.state.offsetTop}/>
           </Flexbox>
 
 
