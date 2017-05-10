@@ -5,6 +5,24 @@ import Flexbox from 'flexbox-react'
 import Icosahedron from '../../public/svg/icosahedron.svg'
 import Burst from './burst.js'
 
+const styles = {
+  brand: {
+    color: '#333',
+    letterSpacing: 3,
+    fontFamily: 'Roboto, sans-serif',
+    fontWeight: 100,
+    marginLeft: 3,
+
+  },
+  hr: {
+    height: 1,
+    borderTop: 'none',
+    borderBottom: '1px solid #555',
+    transform: 'scaleY(0.25)'
+  }
+}
+
+
 class Nav extends Component {
   render(){
     return(
@@ -29,7 +47,7 @@ class Nav extends Component {
              backgroundColor: 'transparent'}}>
              <Burst />
              <span style={styles.brand}>MU</span>
-             <img src={Icosahedron} height={20} width={20} className='App-logo' id={'logo'}/>
+             <img src={Icosahedron} height={20} width={20} className='App-logo' id={'logo'} alt=''/>
              <span style={styles.brand}> NS</span>
            </Flexbox>
 
@@ -52,20 +70,5 @@ class Nav extends Component {
     )
   }
 }
-const styles = {
-  brand: {
-    color: '#333',
-    letterSpacing: 3,
-    fontFamily: 'Roboto, sans-serif',
-    fontWeight: 100,
-    marginLeft: 3,
 
-  },
-  hr: {
-    height: 1,
-    borderTop: 'none',
-    borderBottom: '1px solid #555',
-    transform: 'scaleY(0.25)'
-  }
-}
 export default Nav

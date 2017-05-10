@@ -3,9 +3,7 @@ import mojs from 'mo-js'
 
 
 class Burst extends Component {
-  constructor(props){
-    super(props)
-  }
+
   componentDidMount(){
 
     const first = new mojs.Burst({

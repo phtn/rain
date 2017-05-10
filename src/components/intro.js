@@ -1,5 +1,23 @@
 import React from 'react'
 import Flexbox from 'flexbox-react'
+
+const styles = {
+  title: {
+    fontFamily: 'Roboto, sans-serif',
+    fontWeight: 100,
+    padding: 5,
+    color: '#fbb034',
+    letterSpacing: 1
+  },
+  content: {
+    fontFamily: 'Roboto, sans-serif',
+    fontWeight: 100,
+    fontSize: 12,
+    padding: 5,
+    color: '#fff',
+  }
+}
+
 export default props => (
   <Flexbox flexGrow={1} flexDirection={'column'}
     style={{
@@ -20,20 +38,3 @@ export default props => (
     </span>
   </Flexbox>
 )
-
-const styles = {
-  title: {
-    fontFamily: 'Roboto, sans-serif',
-    fontWeight: 100,
-    padding: 5,
-    color: '#fbb034',
-    letterSpacing: 1
-  },
-  content: {
-    fontFamily: 'Roboto, sans-serif',
-    fontWeight: 100,
-    fontSize: 12,
-    padding: 5,
-    color: '#fff',
-  }
-}

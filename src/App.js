@@ -3,16 +3,43 @@ import Flexbox from 'flexbox-react'
 import { Motion, spring } from 'react-motion'
 import './App.css'
 
-/* svg */
-import Source from '../public/svg/source.svg'
-
 /* components */
 import NAV from './components/nav'
 import INTRO from './components/intro'
 import MOTION from './components/motion'
 import MOVE from './components/move'
 import MOJS from './components/mojs'
-import Burst from './components/burst'
+
+const styles = {
+  container: {
+    backgroundColor: '#dedede'
+  },
+  flex: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    border: '1px solid transparent',
+    backgroundColor: 'gray'
+  },
+  flexBrand: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    border: '1px solid gray',
+    backgroundColor: '#999',
+    borderBottomRightRadius: '100px'
+  },
+  flexOption: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    border: '1px solid gray',
+    backgroundColor: '#2dde98'
+  },
+  flexBody: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    border: '1px solid transparent',
+    backgroundColor: 'gray'
+  }
+}
 
 class App extends Component {
   state = {
@@ -47,8 +74,8 @@ class App extends Component {
             <MOTION />
             <MOVE />
             <MOJS />
-            </Flexbox>
 
+            </Flexbox>
 
 
             </Flexbox>
@@ -62,35 +89,4 @@ class App extends Component {
     );
   }
 }
-const styles = {
-  container: {
-    backgroundColor: '#dedede'
-  },
-  flex: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    border: '1px solid transparent',
-    backgroundColor: 'gray'
-  },
-  flexBrand: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    border: '1px solid gray',
-    backgroundColor: '#999',
-    borderBottomRightRadius: '100px'
-  },
-  flexOption: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    border: '1px solid gray',
-    backgroundColor: '#2dde98'
-  },
-  flexBody: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    border: '1px solid transparent',
-    backgroundColor: 'gray'
-  }
-}
-
 export default App;
