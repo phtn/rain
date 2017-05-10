@@ -7,8 +7,11 @@ import './App.css'
 import Source from '../public/svg/source.svg'
 
 /* components */
-import Nav from './components/nav'
-import Intro from './components/intro'
+import NAV from './components/nav'
+import INTRO from './components/intro'
+import MOTION from './components/motion'
+import MOVE from './components/move'
+import MOJS from './components/mojs'
 import Burst from './components/burst'
 
 class App extends Component {
@@ -27,7 +30,7 @@ class App extends Component {
       <div style={styles.container}>
         <Flexbox flexDirection={'column'} flexGrow={1} minHeight={'100vh'}>
 
-           <Nav />
+           <NAV />
 
         <Motion
           defaultStyle={{a: -1000, b: 0, c: 0}} style={{a: spring(1), b: spring(1), c: spring(1)}}>
@@ -40,9 +43,10 @@ class App extends Component {
 
             }}>
 
-            <Intro />
-            <Intro />
-            <Intro />
+            <INTRO />
+            <MOTION />
+            <MOVE />
+            <MOJS />
             </Flexbox>
 
 
