@@ -12,7 +12,7 @@ export default props => (
 
 
 
-    <Flexbox flexGrow={1} flexDirection={'row'}>
+    <Flexbox flexGrow={1} flexDirection={'row'} style={{marginBottom: 10}}>
       <Flexbox flexGrow={1} style={{ alignItems: 'center', justifyContent: 'center'}}>
         <img src={Info} height={20} width={20} />
       </Flexbox>

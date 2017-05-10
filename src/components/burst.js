@@ -14,10 +14,11 @@ class Burst extends Component {
       angle: [-90],
       duration: 100,
       top: document.getElementById('logo').offsetTop + 16,
+      left: document.getElementById('logo').offsetLeft,
       children: {
         shape: 'polygon',
         points: 4,
-        fill: {'#c1d82f' : "#eee"},
+        fill: {'#ff4c4c' : "#eee"},
         delay: 1000,
         radius: {5:0},
         angle: {0: -270}
@@ -30,9 +31,10 @@ class Burst extends Component {
       angle: [-90],
       duration: 200,
       top: document.getElementById('logo').offsetTop +8,
+      left: document.getElementById('logo').offsetLeft,
       children: {
         shape: 'circle',
-        fill: {'#c1d82f' : "#eee"},
+        fill: {'#ff4c4c' : "#eee"},
         delay: 1600,
         radius: {1:0}
 
@@ -44,9 +46,10 @@ class Burst extends Component {
       angle: [-90],
       duration: 200,
       top: document.getElementById('logo').offsetTop,
+      left: document.getElementById('logo').offsetLeft,
       children: {
         shape: 'circle',
-        fill: {'#c1d82f' : "#eee"},
+        fill: {'#ff4c4c' : "#eee"},
         delay: 1300,
         radius: {1:0}
 
