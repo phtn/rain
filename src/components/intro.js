@@ -15,6 +15,7 @@ const styles = {
     fontSize: 12,
     padding: 5,
     color: '#fff',
+    lineHeight: 1.5,
   }
 }
 
@@ -29,7 +30,7 @@ export default props => (
     <span style={styles.title}>intro</span>
     <span style={styles.content}>
 
-      {`hello! welcome to my webpage. i'm phtn458. i built this page to practice and
+      {`hello and welcome to muons. i'm phtn458. i built this page to practice and
       further enhance my knowledge on javascript and building web applications using react and awesome packages
       available as open source. i'm currently focused on animating elements and components. this
       page will have tutorials, code-snippets, github links, demos and more! a friend of mine once told

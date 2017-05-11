@@ -15,8 +15,10 @@ class Burst extends Component {
       left: document.getElementById('logo').offsetLeft,
       children: {
         shape: 'polygon',
-        points: 4,
-        fill: {'#ff4c4c' : "#eee"},
+        fill: 'none',
+        strokeWidth: 1,
+        points: 3,
+        stroke: {'#ff4c4c' : "#eee"},
         delay: 1000,
         radius: {5:0},
         angle: {0: -270}
@@ -31,10 +33,12 @@ class Burst extends Component {
       top: document.getElementById('logo').offsetTop +8,
       left: document.getElementById('logo').offsetLeft,
       children: {
-        shape: 'circle',
+        shape: 'polygon',
+        points: 3,
         fill: {'#ff4c4c' : "#eee"},
         delay: 1600,
-        radius: {1:0}
+        radius: {1:0},
+        angle: {0: -270}
 
       }
     })
@@ -46,10 +50,11 @@ class Burst extends Component {
       top: document.getElementById('logo').offsetTop,
       left: document.getElementById('logo').offsetLeft,
       children: {
-        shape: 'circle',
+        shape: 'polygon',
         fill: {'#ff4c4c' : "#eee"},
         delay: 1300,
-        radius: {1:0}
+        radius: {1:0},
+        angle: {0: -270}
 
       }
     })
