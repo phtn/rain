@@ -10,13 +10,20 @@ const styles = {
     letterSpacing: 1
   },
   author: {
-    fontSize: 10,
+    fontSize: 12,
     fontFamily: 'Inconsolata',
     fontweight: 'bolder',
     color: '#eee',
   },
-  content: {
+  created: {
+    fontSize: 10,
     fontFamily: 'Roboto, sans-serif',
+    fontWeight: 100,
+    color: '#ccc',
+    margin: '0px 5px 0px',
+  },
+  content: {
+    fontFamily: 'Inconsolata, sans-serif',
     fontWeight: 100,
     fontSize: 12,
     padding: 20,
@@ -33,7 +40,9 @@ export default props => (
       backgroundColor: '#333',
       width: '100%',
     }}>
-    <span style={styles.title}>mojs <span style={styles.author}>created by legomushroom</span></span>
+    <span style={styles.title}>mojs
+      <span style={styles.created}>developed by</span><span style={styles.author}>legomushroom</span>
+    </span>
     <span style={styles.content}>
 
       {``}

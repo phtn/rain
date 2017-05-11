@@ -11,17 +11,24 @@ const styles = {
     letterSpacing: 1
   },
   author: {
-    fontSize: 10,
+    fontSize: 12,
     fontFamily: 'Inconsolata',
     fontweight: 'bolder',
     color: '#eee',
   },
-  content: {
+  created: {
+    fontSize: 10,
     fontFamily: 'Roboto, sans-serif',
+    fontWeight: 100,
+    color: '#ccc',
+    margin: '0px 5px 0px',
+  },
+  content: {
+    fontFamily: 'Inconsolata, sans-serif',
     fontWeight: 100,
     fontSize: 12,
     padding: 20,
-    color: '#fff',
+    color: '#eee',
   }
 }
 
@@ -34,7 +41,9 @@ export default props => (
       backgroundColor: '#333',
       width: '100%',
     }}>
-    <span style={styles.title}>react-move <span style={styles.author}>created by tannerlinsley</span></span>
+    <span style={styles.title}>react-move
+      <span style={styles.created}>developed by</span><span style={styles.author}>tannerlinsley</span>
+    </span>
 
     <Animate default={{n: 0}} data={{n: 10}} duration={200} easing='easeIn'>
       { i =>
