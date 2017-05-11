@@ -6,35 +6,35 @@ const styles = {
     fontFamily: 'Roboto, sans-serif',
     fontWeight: 100,
     padding: 5,
-    color: '#fbb034',
+    color: '#333',
     letterSpacing: 1
   },
   content: {
-    fontFamily: 'Roboto, sans-serif',
+    fontFamily: 'Inconsolata, sans-serif',
     fontWeight: 100,
     fontSize: 12,
     padding: 5,
-    color: '#fff',
+    color: '#333',
     lineHeight: 1.5,
   }
 }
 
 export default props => (
-  <Flexbox flexGrow={1} flexDirection={'column'}
+  <Flexbox flexGrow={1} flexDirection={'column'} className='flex-intro'
     style={{
       border: '1px solid transparent',
       borderRadius: 3,
       margin: '0px 10px 10px',
-      backgroundColor: '#333'
+      backgroundColor: 'none'
     }}>
-    <span style={styles.title}>intro</span>
+    <span style={styles.title}>introduction</span>
     <span style={styles.content}>
 
       {`hello and welcome to muons. i'm phtn458. i built this page to practice and
-      further enhance my knowledge on javascript and building web applications using react and awesome packages
+      further enhance my knowledge on javascript and web application development using react and awesome packages
       available as open source. i'm currently focused on animating elements and components. this
       page will have tutorials, code-snippets, github links, demos and more! a friend of mine once told
-      me that one way to learn something is to teach it. as dan abramov would say -- "happy hacking!".`}
+      me that one way to master something is to teach it..`}
 
     </span>
   </Flexbox>

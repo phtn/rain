@@ -9,6 +9,7 @@ import INTRO from './components/intro'
 import MOTION from './components/motion'
 import MOVE from './components/move'
 import MOJS from './components/mojs'
+import FOOTER from './components/footer'
 
 const styles = {
   container: {
@@ -67,13 +68,14 @@ class App extends Component {
             <Flexbox flexDirection={'column'} flexGrow={1} style={{
               overflowY: 'auto',
               backgroundColor: 'transparent',
-
+              alignItems: 'center'
             }}>
 
             <INTRO />
             <MOTION />
             <MOVE />
             <MOJS />
+            <FOOTER />
 
             </Flexbox>
 
