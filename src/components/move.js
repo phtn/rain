@@ -1,6 +1,8 @@
 import React from 'react'
 import Flexbox from 'flexbox-react'
-import { Animate } from 'react-move'
+import { Motion, spring } from 'react-motion'
+import { Link } from 'react-router-dom'
+import Right from '../../public/svg/right.svg'
 
 const styles = {
   title: {
@@ -8,7 +10,8 @@ const styles = {
     fontWeight: 100,
     padding: 20,
     color: '#6cc644',
-    letterSpacing: 1
+    letterSpacing: 1,
+    marginRight: 10,
   },
   author: {
     fontSize: 12,
@@ -27,33 +30,82 @@ const styles = {
     fontFamily: 'Inconsolata, sans-serif',
     fontWeight: 100,
     fontSize: 12,
-    padding: 20,
+    padding: '10px 20px 10px',
     color: '#eee',
+  },
+  button: {
+    fontFamily: 'Inconsolata',
+    fontSize: 14,
+    color: '#6cc644',
+    padding: '10px 20px 10px',
+
   }
 }
 
+
+
 export default props => (
-  <Flexbox flexGrow={1} flexDirection={'column'} className='flex-intro'
+  <Flexbox flexGrow={1} flexDirection={'row'} className='flex-intro'
     style={{
       border: '1px solid transparent',
-      borderRadius: 3,
-      margin: '0px 10px 10px',
+      borderRadius: 2,
+      margin: `0px 10px 10px`,
       backgroundColor: '#333',
       width: '100%',
+      opacity: props.opacity,
     }}>
+  <Flexbox flexGrow={3} flexDirection={'column'} >
     <span style={styles.title}>react-move
       <span style={styles.created}>developed by</span><span style={styles.author}>tannerlinsley</span>
     </span>
 
-    <Animate default={{n: 0}} data={{n: 10}} duration={200} easing='easeIn'>
-      { i =>
-        (
-          <span style={styles.content}>
-            {`with ease-in interpolation: ${ i.n }` }
-          </span>
-        )
-      }
-    </Animate>
+
+      <Motion defaultStyle={{o: 0}} style={{o: spring(100)}}>
+        { i =>
+          (
+            <span style={styles.content}>
+              { `default interpolation: ${ i.o }` }
+            </span>
+          )
+        }
+      </Motion>
+
+
+    </Flexbox>
+
+
+    <Link to={'/'}
+    style={{
+
+
+      backgroundColor: 'transparent',
+      borderLeft: 'thin double #444',
+      cursor: 'pointer',
+      textDecoration: 'none'
+
+    }}
+    >
+
+      <Flexbox flexGrow={1}
+        style={{
+          marginTop: 42
+        }}
+      >
+
+
+      <img src={ Right } height={40} width={40} alt=''
+        style={{
+          padding: '0px 30px 0px'
+        }}
+      />
+
+
+      </Flexbox>
+
+    </Link>
+
+
+
 
   </Flexbox>
 )

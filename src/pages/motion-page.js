@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import Flexbox from 'flexbox-react'
 import { Motion, spring } from 'react-motion'
-import './App.css'
+import '../App.css'
 
 /* components */
-import NAV from './components/nav'
-import INTRO from './components/intro'
-import MOTION from './components/motion'
-import MOVE from './components/move'
-import MOJS from './components/mojs'
-import FOOTER from './components/footer'
+import NAV from './motion-nav'
+import FOOTER from '../components/footer'
 
 const styles = {
   container: {
@@ -43,7 +39,7 @@ const styles = {
 }
 
 class App extends Component {
-  
+
   render() {
 
     return (
@@ -71,10 +67,6 @@ class App extends Component {
               alignItems: 'center'
             }}>
 
-            <INTRO opacity={i.a}/>
-            <MOTION opacity={i.b} margin={i.m}/>
-            <MOVE opacity={i.c}/>
-            <MOJS opacity={i.d}/>
             <FOOTER opacity={i.e}/>
 
             </Flexbox>
