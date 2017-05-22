@@ -4,6 +4,10 @@ import mojs from 'mo-js'
 
 class Burst extends Component {
 
+  state = {
+    play: this.props.play
+  }
+
   componentDidMount(){
 
     const first = new mojs.Burst({
@@ -58,7 +62,9 @@ class Burst extends Component {
 
       }
     })
-    new mojs.Timeline({repeat: 99}).add( first.replay(), second, third ).play()
+    if (this.state.play){
+      new mojs.Timeline({repeat: 99}).add( first.replay(), second, third ).play()
+    }
 
   }
   render(){

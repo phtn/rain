@@ -4,7 +4,7 @@ import { Motion, spring } from 'react-motion'
 import '../App.css'
 
 /* components */
-import NAV from './motion-nav'
+import NAV from './nav-page'
 import FOOTER from '../components/footer'
 
 const styles = {
@@ -35,6 +35,16 @@ const styles = {
     alignItems: 'center',
     border: '1px solid transparent',
     backgroundColor: 'gray'
+  },
+  content: {
+    fontFamily: 'Inconsolata, sans-serif',
+    fontWeight: 100,
+    fontSize: 14,
+    padding: '5px 20px 5px',
+    color: '#444',
+    letterSpacing: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 }
 
@@ -46,7 +56,7 @@ class App extends Component {
       <div style={styles.container}>
         <Flexbox flexDirection={'column'} flexGrow={1} minHeight={'100vh'}>
 
-           <NAV />
+           <NAV color={'00a4e4'} first={'react'} second={'motion'} />
 
         <Motion
           defaultStyle={{a: 0, b: -50, c: -100, d: -150, e: -200, m: -70}}
@@ -59,7 +69,13 @@ class App extends Component {
             m: spring(10)
           }}>
           {i=> // BODY
-            <Flexbox flexDirection={'row'} flexGrow={10}>
+            <Flexbox flexDirection={'column'} flexGrow={10}>
+
+
+            <Flexbox flexGrow={4} style={styles.content} >
+              coming very soon! sorry...
+            </Flexbox>
+
 
             <Flexbox flexDirection={'column'} flexGrow={1} style={{
               overflowY: 'auto',
@@ -67,7 +83,7 @@ class App extends Component {
               alignItems: 'center'
             }}>
 
-            <FOOTER opacity={i.e}/>
+            <FOOTER/>
 
             </Flexbox>
 

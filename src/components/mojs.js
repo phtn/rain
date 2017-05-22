@@ -1,8 +1,10 @@
 import React from 'react'
 import Flexbox from 'flexbox-react'
-import { Motion, spring } from 'react-motion'
+import { Animate } from 'react-move'
 import { Link } from 'react-router-dom'
 import Right from '../../public/svg/right.svg'
+import Wind from '../../public/svg/burst.svg'
+import mojs from 'mo-js'
 
 const styles = {
   title: {
@@ -29,18 +31,30 @@ const styles = {
   content: {
     fontFamily: 'Inconsolata, sans-serif',
     fontWeight: 100,
-    fontSize: 12,
-    padding: '10px 20px 10px',
-    color: '#eee',
+    fontSize: 14,
+    padding: '5px 20px 5px',
+    color: '#ccc',
+    letterSpacing: 3,
+  },
+  toggle: {
+    padding: '5px 20px 5px',
   },
   button: {
     fontFamily: 'Inconsolata',
     fontSize: 14,
-    color: '#b84592',
+    color: '#00a4e4',
     padding: '10px 20px 10px',
 
   }
 }
+
+
+
+const burst = new mojs.Burst({
+  radius: {0:20},
+  top: 600,
+})
+
 
 
 
@@ -54,52 +68,79 @@ export default props => (
       width: '100%',
       opacity: props.opacity,
     }}>
-  <Flexbox flexGrow={3} flexDirection={'column'} >
-    <span style={styles.title}>mojs
+  <Flexbox flexGrow={3} flexDirection={'column'} style={{borderRight: '0px solid #444'}}>
+    
+    <span style={styles.title}>mo &middot; js
       <span style={styles.created}>developed by</span><span style={styles.author}>legomushroom</span>
     </span>
 
+      <Flexbox flexDirection={'row'} flexGrow={1}>
+        
+        <Flexbox flexGrow={3}>
 
-      <Motion defaultStyle={{o: 0}} style={{o: spring(100)}}>
-        { i =>
-          (
-            <span style={styles.content}>
-              { `default interpolation: ${ i.o }` }
-            </span>
-          )
-        }
-      </Motion>
+        
+              <span style={styles.content} >
+                { `burst  demo` }
+              </span>
+        
+        
+        </Flexbox>
+
+
+        <Flexbox flexGrow={1}>
+
+
+          
+                <img src={ Wind }
+                id='burst-demo' 
+                style={styles.toggle} 
+                height={15} width={15} alt='' 
+                onClick={(e)=> burst.replay()}/>
+              
+
+          
+        </Flexbox>
+
+
+
+      
+      </Flexbox>
+      
 
 
     </Flexbox>
 
+    <Flexbox flexGrow={1}
+        style={{alignItems: 'center', justifyContent: 'center', padding: '0px 20px 0px'}} >
 
-    <Link to={'/'}
-    style={{
 
-
-      backgroundColor: 'transparent',
-      borderLeft: 'thin double #444',
-      cursor: 'pointer',
-      textDecoration: 'none'
-
-    }}
-    >
-
-      <Flexbox flexGrow={1}
+      <Link to={'/mo-js'}
         style={{
-          marginTop: 35
+          backgroundColor: 'transparent',
+          cursor: 'pointer',
+          textDecoration: 'none',
+
         }}
       >
-        <img src={ Right } height={40} width={40} alt=''
-          style={{
-            padding: '0px 30px 0px'
-          }}
-        />
-      </Flexbox>
 
-    </Link>
 
+        <Animate default={{n: 0}} data={{n: 1}} duration={500} easing={'easeIn'} >
+          { i =>
+            (
+              <img src={ Right } height={30} width={30} alt=''
+                style={{opacity: i.n}}
+              />
+            )
+          }
+        </Animate>
+        
+
+
+      
+
+      </Link>
+
+    </Flexbox>
 
 
 

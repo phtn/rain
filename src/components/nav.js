@@ -46,7 +46,9 @@ class Nav extends Component {
              justifyContent: 'center',
              alignItems: 'center',
              backgroundColor: 'transparent'}}>
-             <Burst />
+
+             <Burst play={true} />
+             
              <span style={styles.brand}>MU</span>
              <img src={Icosahedron} height={20} width={20} className='App-logo' id={'logo'} alt=''/>
              <span style={styles.brand}> NS</span>

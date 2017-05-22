@@ -5,6 +5,8 @@ import APP from './App';
 
 /* pages */
 import MOTION from './pages/motion-page'
+import MOVE from './pages/move-page'
+import MOJS from './pages/mojs-page'
 
 /* css */
 import './index.css';
@@ -21,6 +23,16 @@ ReactDOM.render(
         path='/react-motion'
         name='react-component'
         component={ MOTION }
+      />
+      <Route exact
+        path='/react-move'
+        name='react-component'
+        component={ MOVE }
+      />
+      <Route exact
+        path='/mo-js'
+        name='react-component'
+        component={ MOJS }
       />
 
     </Switch>

@@ -1,8 +1,9 @@
 import React from 'react'
 import Flexbox from 'flexbox-react'
-import { Motion, spring } from 'react-motion'
+import { Animate } from 'react-move'
 import { Link } from 'react-router-dom'
 import Right from '../../public/svg/right.svg'
+import Toggle from '../../public/svg/move-toggle.svg'
 
 const styles = {
   title: {
@@ -29,14 +30,17 @@ const styles = {
   content: {
     fontFamily: 'Inconsolata, sans-serif',
     fontWeight: 100,
-    fontSize: 12,
-    padding: '10px 20px 10px',
-    color: '#eee',
+    fontSize: 14,
+    padding: '5px 20px 5px',
+    color: '#ccc',
+  },
+  toggle: {
+    padding: '5px 20px 5px',
   },
   button: {
     fontFamily: 'Inconsolata',
     fontSize: 14,
-    color: '#6cc644',
+    color: '#00a4e4',
     padding: '10px 20px 10px',
 
   }
@@ -54,56 +58,86 @@ export default props => (
       width: '100%',
       opacity: props.opacity,
     }}>
-  <Flexbox flexGrow={3} flexDirection={'column'} >
+  <Flexbox flexGrow={3} flexDirection={'column'} style={{borderRight: '0px solid #444'}}>
+    
     <span style={styles.title}>react-move
       <span style={styles.created}>developed by</span><span style={styles.author}>tannerlinsley</span>
     </span>
 
+      <Flexbox flexDirection={'row'} flexGrow={1}>
+        
+        <Flexbox flexGrow={1}>
 
-      <Motion defaultStyle={{o: 0}} style={{o: spring(100)}}>
-        { i =>
-          (
-            <span style={styles.content}>
-              { `default interpolation: ${ i.o }` }
-            </span>
-          )
-        }
-      </Motion>
+        <Animate default={{n: 0}} data={{n: props.moveLS}} duration={500} easing={'easeIn'}>
+          { i =>
+            (
+              <span style={Object.assign({}, styles.content, {letterSpacing: i.n})}>
+                { `interpolation  demo` }
+              </span>
+            )
+          }
+        </Animate>
+        
+        </Flexbox>
+
+
+        <Flexbox flexGrow={1}>
+
+
+          <Animate default={{n: 0}} data={{n: props.moveR}} duration={500} easing={'easeIn'}>
+            { i =>
+              (
+                <img src={ Toggle } 
+                style={Object.assign({}, styles.toggle, {transform: `rotate(${i.n}deg)`})} 
+                height={15} width={15} alt='' 
+                onClick={props.toggle}/>
+              )
+            }
+          </Animate>
+
+          
+        </Flexbox>
+
+
+
+      
+      </Flexbox>
+      
 
 
     </Flexbox>
 
+    <Flexbox flexGrow={1}
+        style={{alignItems: 'center', justifyContent: 'center', padding: '0px 20px 0px'}} >
 
-    <Link to={'/'}
-    style={{
 
-
-      backgroundColor: 'transparent',
-      borderLeft: 'thin double #444',
-      cursor: 'pointer',
-      textDecoration: 'none'
-
-    }}
-    >
-
-      <Flexbox flexGrow={1}
+      <Link to={'/react-move'}
         style={{
-          marginTop: 42
+          backgroundColor: 'transparent',
+          cursor: 'pointer',
+          textDecoration: 'none',
+
         }}
       >
 
 
-      <img src={ Right } height={40} width={40} alt=''
-        style={{
-          padding: '0px 30px 0px'
-        }}
-      />
+        <Animate default={{n: 0}} data={{n: 1}} duration={500} easing={'easeIn'} >
+          { i =>
+            (
+              <img src={ Right } height={30} width={30} alt=''
+                style={{opacity: i.n}}
+              />
+            )
+          }
+        </Animate>
+        
 
 
-      </Flexbox>
+      
 
-    </Link>
+      </Link>
 
+    </Flexbox>
 
 
 
