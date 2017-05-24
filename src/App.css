@@ -9,7 +9,9 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-
+.intro-text {
+      font-size: 14px;
+    }
 @media screen
   and (min-device-width: 1200px)
   and (max-device-width: 1600px)
@@ -18,5 +20,8 @@
       max-width: 70%;
       min-width: 70%;
       font-size: 18px;
+    }
+    .intro-text {
+      font-size: 20px;
     }
 }

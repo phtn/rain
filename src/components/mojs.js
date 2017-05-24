@@ -53,6 +53,7 @@ const styles = {
 const burst = new mojs.Burst({
   radius: {0:20},
   top: 600,
+  left: 120,
 })
 
 
@@ -76,11 +77,11 @@ export default props => (
 
       <Flexbox flexDirection={'row'} flexGrow={1}>
         
-        <Flexbox flexGrow={3}>
+        <Flexbox flexGrow={1}>
 
         
               <span style={styles.content} >
-                { `burst  demo` }
+                { `burst _ _ _ _  demo!` }
               </span>
         
         

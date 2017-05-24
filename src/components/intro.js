@@ -12,7 +12,7 @@ const styles = {
   content: {
     fontFamily: 'Inconsolata, sans-serif',
     fontWeight: 100,
-    fontSize: 12,
+    //fontSize: 12,
     padding: 5,
     color: '#333',
     lineHeight: 1.5,
@@ -29,7 +29,7 @@ export default props => (
       opacity: props.opacity,
     }}>
     <span style={styles.title}>introduction</span>
-    <span style={styles.content}>
+    <span style={styles.content} className='intro-text'>
 
       {`hello and welcome to muons. i'm phtn458. i built this page to share and
       further enhance my knowledge on javascript and web application development using react and awesome packages
