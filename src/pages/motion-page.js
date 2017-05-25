@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom'
 import Flexbox from 'flexbox-react'
 import { Motion, spring } from 'react-motion'
 import '../App.css'
