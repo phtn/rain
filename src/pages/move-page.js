@@ -13,6 +13,26 @@ const styles = {
   container: {
     backgroundColor: 'transparent'
   },
+  tab: {
+    fontFamily: 'Inconsolata, sans-serif',
+    fontWeight: 100,
+    fontSize: 14,
+    padding: '5px 20px 5px',
+    color: '#444',
+    letterSpacing: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#eee',
+    margin: '5px 0px 5px',
+    textAlign: 'center'
+  },
+  tabs: {
+    fontFamily: 'Inconsolata, sans-serif',
+    fontWeight: 100,
+    color: '#444',
+    marginRight: 15,
+    borderBottom: '1px solid #6cc644'
+  },
   content: {
     fontFamily: 'Inconsolata, sans-serif',
     fontWeight: 100,
@@ -96,6 +116,10 @@ class App extends Component {
               <NAV color={'green'} first={'react'} second={'move'} />
               
               <div className='code-container'>
+
+              <div style={styles.tab}>
+                <span style={styles.tabs}>Animate</span>
+              </div>
 
               <div style={styles.content}>This tutorial assumes that you already have <strong>create-react-app</strong> installed.</div>
 
@@ -302,8 +326,8 @@ class App extends Component {
   export default props => (
     
     <Animate
-      default={{ n: 0 }}
-      data={{ n: 3 }}
+      default={{ l: 0 }}
+      data={{ l: 3 }}
       duration={1000}
       easing={'easeIn'}
     > 
@@ -343,7 +367,7 @@ class App extends Component {
               <button style={styles.button} onClick={this.rotate.bind(this)}> rotate </button>
               </div>
 
-              <div style={styles.content}>i've added animation on <i>borderRadius</i> as well </div>
+              
 
               <Highlight language='js'>
                 <pre>
@@ -351,11 +375,22 @@ class App extends Component {
                 </pre>
               </Highlight>
 
+              <div style={styles.content}>i've added animation on <i>borderRadius</i> as well </div>
 
-              <div style={styles.content}>you can add animation on just about everything you can style in <i>css</i> like the element's <strong>opacity</strong>, 
-              <strong>width & height</strong>, <strong>borderWidth</strong>, <strong>padding</strong> and more! </div>
+              <Highlight language='js'>
+                <pre>
+                {`borderRadius: i.r`}
+                </pre>
+              </Highlight>
 
-              <div style={styles.content}>more demos soon! </div>
+              <div style={styles.content}>if you notice I'm only putting single letters to object keys for simplicity. </div>
+              <div style={styles.content}><strong>l</strong> letterSpacing, <strong>r</strong> radius, <strong>o</strong> opacity and so forth.. </div>
+              <div style={styles.content}>but ofcourse you can name them to whatever is convenient and easier for you. </div>
+
+              <div style={styles.content}>you can add animations to just about everything that you can style in <i>css</i> like the element's <strong>opacity</strong>, 
+              <strong> width & height</strong>, <strong>borderWidth</strong>, <strong>padding</strong> and more! </div>
+
+              <div style={styles.content}>for updates, follow me on twitter & github! </div>
               <br/>
               <div style={styles.footer}>
                 <a href='http://twitter.com/phtn458'>
