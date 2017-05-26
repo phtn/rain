@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../App.css'
 import Highlight from 'react-highlight.js'
 import { Animate } from 'react-move'
+import Twitter from '../../public/svg/twitter.svg'
+import Github from '../../public/svg/github.svg'
 
 /* components */
 import NAV from './nav-page'
@@ -38,17 +40,53 @@ const styles = {
     border: 'none',
     backgroundColor: '#222',
     color: '#ccc'
+  },
+  rotate: {
+    width: 50,
+    height: 50,
+    backgroundColor: '#999',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    margin: '0px auto'
+  },
+  footer: {
+    fontFamily: 'Inconsolata, sans-serif',
+    fontWeight: 100,
+    fontSize: '18px',
+    color: '#444',
+    letterSpacing: 1,
+    border: '1px solid #eee',
+    borderRadius: 5,
+    margin: 5,
+    textAlign: 'center',
+    padding: 10
+  },
+  img: {
+    margin: 10
   }
 }
 
 class App extends Component {
 
   state = {
-    counter: 0
+    counter: 0,
+    space: 0,
+    deg: 0,
+    radius: 0
   }
 
-  add(){
+  add() {
     this.setState({counter: this.state.counter + 1})
+  }
+
+  space() {
+    this.state.space === 0 ? this.setState({space: 3}) : this.setState({space: 0})
+  }
+
+  rotate() {
+    this.state.deg === 0 ? this.setState({deg: 180}) : this.setState({deg: 0}) 
+    this.state.radius === 0 ? this.setState({radius: 15}) : this.setState({radius: 0}) 
   }
 
   render() {
@@ -197,9 +235,12 @@ class App extends Component {
               </Highlight>
               
               
-              <div style={styles.content}>i've added <i>duration</i> | type: number & <i>easing</i> type: String</div>
+              <div style={styles.content}>i've added:</div>
+              <div style={styles.content}><i>duration</i> | milliseconds | type: number </div>
+              <div style={styles.content}><i>easing</i> | d3-interpolate | type: String</div>
+              <br/>
               <div style={styles.content}>Being an <strong>HOC</strong>, inside the <strong>Animate </strong>
-                we have a <i>function</i> that accepts an argument <strong><i>i</i></strong> and returns a single element 
+                we have a <i>function</i> that takes an argument <strong><i>i</i></strong> and returns a single element 
                 <i> {`<p> { i.n } </p>`}</i>
               </div>
               <br/>
@@ -224,18 +265,107 @@ class App extends Component {
               <button style={styles.button} onClick={this.add.bind(this)}> + </button>
               </div>
 
-              <div style={styles.content}>in this counter example we can see how the number interpolates. </div>
+              <div style={styles.content}>in this counter demo we can see how the number interpolates from <strong>n</strong> to <strong>n + 1 </strong>. </div>
               <div style={styles.content}>pretty neat right? </div>
 
               <br/>
-              <div style={styles.content}>more examples coming soon! bye for now :) </div>
+              <div style={styles.content}>here's more! </div>
               <br/>
 
+              <div style={styles.run}>
+              <Animate
+                default={{ n: 0 }}
+                data={{ n: this.state.space }}
+                duration={ 1000 }
+                easing={ 'easeIn' }
+              >
+
+                {i=> 
+                  (
+                    <div style={Object.assign( {}, styles.content, {letterSpacing: i.n })}> letter spacing </div>
+                  )
+                }
+
+              </Animate>
+              <br/>
+              <button style={styles.button} onClick={this.space.bind(this)}> toggle </button>
+              </div>
+
+              <div style={styles.content}> in this demo, interpolation happens in <i> letterSpacing </i> <strong>in-line style</strong>. </div>
+
+              <Highlight language='js'>
+                <pre>
+                {`
+  import React from 'react'
+  import { Animate } from 'react-move'
+
+  export default props => (
+    
+    <Animate
+      default={{ n: 0 }}
+      data={{ n: 3 }}
+      duration={1000}
+      easing={'easeIn'}
+    > 
+
+      { i=>
+        (
+          <p style={{ letterSpacing: i.n }}> letter spacing </p> 
+        )
+      }
+    
+    </Animate>
+  
+  )
+                `}
+                </pre>
+              </Highlight>
+
+              <div style={styles.content}>here's a rotate example! </div>
 
 
+              <div style={styles.run}>
+              <Animate
+                default={{ n: 0, r: 0 }}
+                data={{ n: this.state.deg, r: this.state.radius }}
+                duration={ 1000 }
+                easing={ 'easeIn' }
+              >
+
+                {i=> 
+                  (
+                    <div style={Object.assign( {}, styles.rotate, {transform: `rotate(${i.n}deg)`, borderRadius: i.r})}> </div>
+                  )
+                }
+
+              </Animate>
+              <br/>
+              <button style={styles.button} onClick={this.rotate.bind(this)}> rotate </button>
+              </div>
+
+              <div style={styles.content}>i've added animation on <i>borderRadius</i> as well </div>
+
+              <Highlight language='js'>
+                <pre>
+                {' transform: `rotate( ${ i.n }deg)`'}
+                </pre>
+              </Highlight>
 
 
+              <div style={styles.content}>you can add animation on just about everything you can style in <i>css</i> like the element's <strong>opacity</strong>, 
+              <strong>width & height</strong>, <strong>borderWidth</strong>, <strong>padding</strong> and more! </div>
 
+              <div style={styles.content}>more demos soon! </div>
+              <br/>
+              <div style={styles.footer}>
+                <a href='http://twitter.com/phtn458'>
+                <img style={styles.img} src={ Twitter } width={25} height={25} alt='' />  
+                </a>
+                <a href='http://github.com/phtn'>
+                <img style={styles.img} src={ Github } width={25} height={25} alt='' />  
+                </a>
+              </div>
+              <br/>
 
 
               </div>
