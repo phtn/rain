@@ -404,7 +404,7 @@ class MotionPage extends Component {
               </Highlight>
 
               <div style={styles.content}><strong>d</strong> for degrees to rotate &</div>
-              <div style={styles.content}><strong>r</strong> for radius of borders</div>
+              <div style={styles.content}><strong>r</strong> for borderRadius</div>
 
               
 
@@ -412,7 +412,7 @@ class MotionPage extends Component {
               <div style={styles.content}><strong>l</strong> letterSpacing, <strong>r</strong> radius, <strong>o</strong> opacity and so forth.. </div>
               <div style={styles.content}>but ofcourse you can name them to whatever is convenient and easier for you. </div>
 
-              <div style={styles.content}>you can add animations to just about everything that you can style in <i>css</i> like the element's <strong>opacity</strong>, 
+              <div style={styles.content}>and you can add animations to just about everything that you can style in <i>css</i> like the element's <strong>opacity</strong>, 
               <strong> width & height</strong>, <strong>borderWidth</strong>, <strong>padding</strong> and more! </div>
 
               <div style={styles.content}>for updates, follow me on twitter & github! </div>
