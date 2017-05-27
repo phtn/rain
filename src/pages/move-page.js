@@ -30,7 +30,6 @@ const styles = {
     fontFamily: 'Inconsolata, sans-serif',
     fontWeight: 100,
     color: '#444',
-    marginRight: 15,
     borderBottom: '1px solid #6cc644'
   },
   content: {
@@ -87,7 +86,7 @@ const styles = {
   }
 }
 
-class App extends Component {
+class MovePage extends Component {
 
   state = {
     counter: 0,
@@ -113,7 +112,7 @@ class App extends Component {
 
     return (
       <div style={styles.container}>
-              <NAV color={'green'} first={'react'} second={'move'} />
+              <NAV color={'444'} first={'react'} second={'move'} />
               
               <div className='code-container'>
 
@@ -140,9 +139,10 @@ class App extends Component {
               <div style={styles.content}>Now let's add <strong>react-move</strong> package.</div>
               <div style={styles.content}>On your <i>terminal</i>, you can type..</div>
 
-              <Highlight language='js'>
+              <Highlight language='bash'>
                 <pre>
                 {`
+ #!/bin/bash
  ~> yarn add react-move 
                 `}
                 </pre>
@@ -150,9 +150,10 @@ class App extends Component {
 
               <div style={styles.content}>or if you prefer <strong>npm</strong> ...</div>
 
-              <Highlight language='js'>
+              <Highlight language='bash'>
                 <pre>
                 {`
+ #!/bin/bash
  ~> npm i -S react-move
                 `}
                 </pre>
@@ -334,7 +335,7 @@ class App extends Component {
 
       { i=>
         (
-          <p style={{ letterSpacing: i.n }}> letter spacing </p> 
+          <p style={{ letterSpacing: i.l }}> letter spacing </p> 
         )
       }
     
@@ -379,7 +380,7 @@ class App extends Component {
 
               <Highlight language='js'>
                 <pre>
-                {`borderRadius: i.r`}
+                {` borderRadius: i.r`}
                 </pre>
               </Highlight>
 
@@ -425,4 +426,4 @@ class App extends Component {
     );
   }
 }
-export default App;
+export default MovePage;
