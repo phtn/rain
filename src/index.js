@@ -20,11 +20,13 @@ ReactDOM.render(
         component={ APP }
       />
       <Route exact
+        onUpdate={ window.scrollTo(0, 0)}
         path='/react-motion'
         name='react-component'
         component={ MOTION }
       />
       <Route exact
+        onUpdate={ window.scrollTo(0, 0)}
         path='/react-move'
         name='react-component'
         component={ MOVE }
